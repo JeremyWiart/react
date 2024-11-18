@@ -21,12 +21,12 @@ const App = () => {
   const [favourites, setFavourites] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const navItems = [
-    { path: '/', label: 'Home' },
+    { path: '/Home', label: 'Home' },
     { path: '/MovieList', label: 'Movies' },
     { path: '/Contact', label: 'Contact' },
     { path: '/About', label: 'About' },
 	{ path: '/Register', label: 'Register'},
-	{ path: '/Login', label: 'Login'}
+	{ path: '/', label: 'Login'}
   ];
   const plans = [
 	{
@@ -53,7 +53,7 @@ const App = () => {
   const handleLogin = (status) => { setIsLoggedIn(status); };
 
   const getMovieRequest = async (searchValue) => {
-    const url = {/* votre url omdb ici*/};
+    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=369cb0f8`;
     const response = await fetch(url);
     const responseJson = await response.json();
 
@@ -109,7 +109,7 @@ const App = () => {
 		<NavBar brandName="MyNetflop" navItems={navItems} searchValue={searchValue} setSearchValue={setSearchValue} /> 
 			<Suspense fallback={<div className="container">Loading...</div>}> 
 			<Routes> 
-				<Route path="/" element={<Home plans={plans} onSelectPlan={handleSelectPlan}/>} /> 
+				<Route path="/Home" element={<Home plans={plans} onSelectPlan={handleSelectPlan}/>} /> 
 				<Route path="/About" element={<About />} /> 
 				<Route path="/Contact" element={<Contact />} /> 
 				<Route path="/MovieList" element={ 
@@ -121,7 +121,7 @@ const App = () => {
 					<MovieList movies={favourites} handleFavouritesClick={removeFavouriteMovie} favouriteComponent={RemoveFavourites} /> </> } /> 
 					<Route path="/MovieDetails/:id" element={<MovieDetails />} /> 
 				<Route path="/Register" element={<MyRegister />} />
-				<Route path="/Login" element={<MyLogin onLogin={handleLogin}/>} />
+				<Route path="/" element={<MyLogin onLogin={handleLogin}/>} />
 				<Route path="/Plan" element={<MyPlan />} />
 				<Route path="*" element={<NoMatch />} /> 
 			</Routes> 
