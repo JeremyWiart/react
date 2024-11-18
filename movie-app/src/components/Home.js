@@ -7,10 +7,7 @@ const Home = ({ plans, onSelectPlan }) => {
   return (
     <div class="bg-gray-900 py-16">
     <div class="container mx-auto px-4"> 
-        <h1 class="text-6xl text-gray-200 leading-relaxed text-center">"Bienvenue sur Netflop"</h1>
-        <h2 class="text-4xl text-gray-400 leading-relaxed text-center">
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-    </h2>
+        <h1 class="text-6xl text-gray-200 leading-relaxed text-center">Liste des différents plans</h1>
       <div className="flex justify-around">
         {plans.map((plan, index) => (
       <div class="bg-white w-64 h-96 content-center  rounded-lg shadow-lg p-8">
