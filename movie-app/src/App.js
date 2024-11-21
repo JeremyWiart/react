@@ -16,6 +16,7 @@ import MyLogin from './components/MyLogin';
 import NoMatch from './components/NoMatch';
 import MovieDetails from './components/MovieDetails';
 
+
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [favourites, setFavourites] = useState([]);
@@ -53,7 +54,7 @@ const App = () => {
   const handleLogin = (status) => { setIsLoggedIn(status); };
 
   const getMovieRequest = async (searchValue) => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=369cb0f8`;
+    const url = `${process.env.REACT_APP_API_URL}&s=${searchValue}`;
     const response = await fetch(url);
     const responseJson = await response.json();
 

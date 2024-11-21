@@ -14,7 +14,7 @@ function Contact(){
             <div class="bg-gray-900 py-16">
             <div class="container mx-auto px-4"></div>
             <div className="container mx-auto p-4"> 
-                <h1 className="text-2xl font-bold mb-4 text-white">Keep in Touch</h1>
+                <h1 className="text-2xl font-bold mb-4 text-white">Formulair Contact</h1>
                  <MyForm fields={fields} onSubmit={handleSubmit} />
             </div> 
             </div>

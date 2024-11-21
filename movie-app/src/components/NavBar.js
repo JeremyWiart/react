@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import SearchBox from './SearchBox';
-
+import Logout from './Logout';
 const NavBar = ({ brandName, navItems, searchValue, setSearchValue }) => {
   return (
     <nav className="bg-gray-800 p-4">
@@ -15,8 +15,9 @@ const NavBar = ({ brandName, navItems, searchValue, setSearchValue }) => {
               </NavLink>
             </li>
           ))}
+          
         </ul>
-        <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
+        <Logout />
       </div>
     </nav>
   );

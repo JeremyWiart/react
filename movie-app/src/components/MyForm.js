@@ -66,9 +66,7 @@ const MyForm = ({ fields, onSubmit }) => {
               placeholder={field.placeholder}
             />
           )}
-          {errors[field.name] && (
-            <div className="text-red-500">{errors[field.name]}</div>
-          )}
+          {errors[field.name] && (<div className="text-red-500">{errors[field.name]}</div>)}
         </div>
       ))}
       <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded">
